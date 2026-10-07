@@ -32,7 +32,7 @@ apt_repositories:
   - url: https://...
     filename: "{{ item.url|urlsplit('hostname') }}"
     types: deb
-    suites: "{{ ansible_distribution_release }}"
+    suites: "{{ ansible_facts['distribution_release'] }}"
     components: main
     packages: []
     key_path: # a file path in the role `files` dir instead of `key`
